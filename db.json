@@ -1,0 +1,38 @@
+{
+  "logs": [
+    {
+      "message": "dDdDDSfdsfdsfdsfsssss",
+      "tech": "John Doe",
+      "attention": true,
+      "id": 1
+    },
+    {
+      "message": "ffssssssss",
+      "tech": "Sara Wilson",
+      "attention": false,
+      "id": 2
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    },
+    {
+      "firstName": "Aaron",
+      "lastName": "Noseworthy",
+      "id": 4
+    }
+  ]
+}
