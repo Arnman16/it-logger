@@ -3,8 +3,9 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { updateLog } from '../../actions/logActions';
+import TechSelectOptions from '../techs/TechSelectOptions';
 
-const EditLogModal = ({ log: { current }, updateLog }) => {
+const EditLogModal = ({ current, updateLog }) => {
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
@@ -43,9 +44,6 @@ const EditLogModal = ({ log: { current }, updateLog }) => {
                 setMessage(e.target.value);
               }}
             />
-            <label htmlFor="message" className="active">
-              Log Message
-            </label>
           </div>
         </div>
         <div className="row">
@@ -62,9 +60,7 @@ const EditLogModal = ({ log: { current }, updateLog }) => {
               <option value="" disabled>
                 Select Tech
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>
@@ -110,9 +106,10 @@ const modalStyle = {
 };
 EditLogModal.propTypes = {
   current: PropTypes.object,
+  updateLog: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
-  log: state.log,
+  current: state.log.current,
 });
 
 export default connect(mapStateToProps, { updateLog })(EditLogModal);
